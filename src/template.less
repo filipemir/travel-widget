@@ -4,6 +4,7 @@
 @dark: #333333;
 
 @button-width: 125px;
+@dates-width: 300px;
 
 .stn-widget {
     background-color: @bg-color;
@@ -23,6 +24,7 @@
             margin: 0 auto;
             height: 56px;
             text-align: center;
+            position: relative;
         }
 
         .header {
@@ -37,6 +39,12 @@
             .main-fields {
                 background-color: @inputs-bg-color;
                 border-radius: 5px;
+                float: left;
+                height: 100%;
+                position: relative;
+                width: 100%;
+                padding-right: @button-width;
+                box-sizing: border-box;
             }
 
             .input-field {
@@ -61,8 +69,6 @@
                 &.right {
                     border-radius: 0 5px 5px 0;
                 }
-
-
             }
 
             input {
@@ -92,15 +98,16 @@
             }
 
             .location {
-                width: 500px;
+                min-width: 300px;
                 float: left;
             }
 
             .dates {
-                width: 300px;
+                width: @dates-width;
                 display: inline-block;
                 height: 56px;
                 position: relative;
+                float: left;
 
                 .calendar-icon {
                     width: 1.143em;
@@ -112,7 +119,6 @@
                     bottom: 0;
                     left: 0;
                     margin: auto 0;
-                    padding-bottom: 2px;
 
                     color: #ff690f;
                     z-index: 1;
@@ -121,13 +127,6 @@
                     svg {
                         display: block;
                     }
-                }
-
-                .date-container {
-                    float: left;
-                    padding-left: 30px;
-                    width: 100%;
-                    padding: 0;
                 }
 
                 #dateRange {
@@ -158,10 +157,8 @@
                 color: white;
                 text-align: center;
                 line-height: 56px;
-
-                @media (max-width: 1050px) {
-                    width: 100%;
-                }
+                position: absolute;
+                right: 0;
 
                 span {
                     display: inline-block;
