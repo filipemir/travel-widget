@@ -98,16 +98,25 @@
             }
 
             .location {
-                min-width: 300px;
                 float: left;
+                width: 100%;
+            }
+
+            .fills-left {
+                box-sizing: border-box;
+                padding-right: @dates-width;
+                width: 100%;
+                position: relative;
             }
 
             .dates {
                 width: @dates-width;
+
                 display: inline-block;
                 height: 56px;
-                position: relative;
-                float: left;
+                position: absolute;
+                // float: left;
+                right: 0;
 
                 .calendar-icon {
                     width: 1.143em;
