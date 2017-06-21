@@ -1,34 +1,46 @@
+// Colors:
 @bg-color: #E6E1DC;
+@primary-text-color: black;
 @inputs-bg-color: #fff;
-@orange: #DF6D4B;
-@dark: #333333;
+@active-color: #DF6D4B;
+@button-color: @active-color;
+@button-text-color: #fff;
 
+// Fonts
+@font-family: Helvetica, Arial, sans-serif;
+@headline-font-size: 26px;
+@form-font-size: 15px;
+
+@border-width: 2px;
+@line-height: 56px;
+@border-radius: 5px;
 @button-width: 125px;
-@dates-width: 250px;
-@location-max-width: 700px;
-@form-max-width: calc(@location-max-width + @dates-width + @button-width);
+@date-range-field-width: 250px;
+@location-field-max-width: 600px;
+@form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
 .stn-widget {
     // Base styles:
-    width: 100%;
     background-color: @bg-color;
+    width: 100%;
 
-    font-family: Helvetica, Arial, sans-serif;
-    color: @dark;
+    color: @primary-text-color;
+    font-family: @font-family;
 
     .row {
+        height: @line-height;
         width: 100%;
         margin: 0 auto;
-        height: 56px;
         text-align: center;
         position: relative;
         box-sizing: border-box;
     }
 
     .headline {
-        font-size: 26px;
+        font-size: @headline-font-size;
         text-align: center;
         padding: 10px 0 20px;
+        line-height: @line-height;
     }
 
     .form-container {
@@ -38,11 +50,11 @@
         width: 100%;
         height: auto;
         padding: 10px 20px;
-        font-size: 14px;
+        font-size: @form-font-size;
     }
 
     .form-fields {
-        border-radius: 5px;
+        border-radius: @border-radius;
         float: left;
         height: 100%;
         position: relative;
@@ -52,7 +64,7 @@
 
     .form-field {
         background-color: @inputs-bg-color;
-        line-height: 56px;
+        line-height: @line-height;
         height: 100%;
         display: inline-block;
         position: relative;
@@ -62,12 +74,12 @@
         input {
             background-color: @inputs-bg-color;
             width: 100%;
-            height: 56px;
+            height: @line-height;
             padding: 0;
             outline: none;
             border-width: 0px;
-            font-size: 16px;
-            border-radius: 5px;
+            font-size: @form-font-size;
+            border-radius: @border-radius;
 
             height: auto;
             position: absolute;
@@ -77,65 +89,61 @@
         }
 
         &.active {
-            border-bottom-style: solid;
-            border-bottom-width: 2px;
-            border-color: @orange;
+            border-bottom: @active-color solid @border-width;
         }
 
-        &.left {
-            border-radius: 5px 0 0 5px;
+        &.round-left {
+            border-radius: @border-radius 0 0 @border-radius;
         }
 
-        &.right {
-            border-radius: 0 5px 5px 0;
+        &.round-right {
+            border-radius: 0 @border-radius @border-radius 0;
         }
     }
 
     .date-range-field {
-      width: @dates-width;
+      width: @date-range-field-width;
+      height: @line-height;
 
       display: inline-block;
-      height: 56px;
-      position: absolute;
-      right: 0;
+      position: relative;
+
+      .calendar-icon {
+          width: 1.143em;
+          height: 1.25em;
+
+          position: absolute;
+          top: 0; right: 0; bottom: 0; left: 0;
+          margin: auto 0;
+
+          color: @active-color;
+          z-index: 1;
+      }
 
       input {
-          padding-left: 30px;
+          padding-left: 30px; // Leave space for the calendar icon
       }
     }
 
-    .calendar-icon {
-        width: 1.143em;
-        height: 1.25em;
-
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        margin: auto 0;
-
-        color: #ff690f;
-        z-index: 1;
-    }
-
     .submit-button {
-        display: block;
-        background-color: @orange;
+        background-color: @button-color;
         width: @button-width;
         height: 100%;
-        border-radius: 5px;
+        border-radius: @border-radius;
         text-align: center;
-        line-height: 56px;
+        line-height: @line-height;
         position: absolute;
         right: 0;
 
         span {
-            color: white;
+            color: @button-text-color;
             display: inline-block;
             vertical-align: middle;
         }
 
         &:hover {
             cursor: pointer;
-            background-color: darken(@orange, 6%);
+            background-color: darken(@button-color, 6%);
         }
 
         -webkit-transition: background-color 300ms;
@@ -147,7 +155,7 @@
     // Vertical specific styles
     #hotel-form {
         .form-fields {
-            padding-right: @dates-width;
+            padding-right: @date-range-field-width;
         }
 
         .hotel-form-elements {
@@ -158,11 +166,16 @@
         .location-field {
           float: left;
           width: 100%;
-          max-width: 700px;
+          max-width: @location-field-max-width;
+        }
+
+        .date-range-field {
+          position: absolute;
+          right: 0;
         }
 
         .submit-button {
-            border-radius: 0 5px 5px 0;
+            border-radius: 0 @border-radius @border-radius 0;
         }
     }
 }
