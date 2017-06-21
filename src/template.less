@@ -1,7 +1,9 @@
 // Colors:
-@bg-color: #E6E1DC;
-@primary-text-color: black;
+@bg-color: #E4E5EA;
+@primary-text-color: 424242;
 @inputs-bg-color: #fff;
+@inputs-text-color: 424242;
+@placeholder-text-color: #9a9ca8;
 @active-color: #DF6D4B;
 @button-color: @active-color;
 @button-text-color: #fff;
@@ -73,6 +75,14 @@
 
         input {
             background-color: @inputs-bg-color;
+            color: @inputs-text-color;
+
+            &::-webkit-input-placeholder { color: @placeholder-text-color; }
+            &:-moz-placeholder { color: @placeholder-text-color; opacity:  1; }
+            &::-moz-placeholder  { color: @placeholder-text-color; opacity:  1; }
+            &:-ms-input-placeholder { color: @placeholder-text-color; }
+            &::-ms-input-placeholder  { color: @placeholder-text-color; }
+
             width: 100%;
             height: @line-height;
             padding: 0;
