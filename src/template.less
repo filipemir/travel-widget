@@ -17,7 +17,8 @@
 @line-height: 56px;
 @border-radius: 5px;
 @button-width: 125px;
-@date-range-field-width: 250px;
+@date-range-field-width: 200px;
+@extra-fields-width: 300px;
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
@@ -71,7 +72,7 @@
         display: inline-block;
         position: relative;
         box-sizing: border-box;
-        height: 100%;
+        height: @line-height;
 
         input {
             background-color: @inputs-bg-color;
@@ -113,7 +114,6 @@
 
     .date-range-field {
       width: @date-range-field-width;
-      height: @line-height;
 
       display: inline-block;
       position: relative;
@@ -165,7 +165,7 @@
     // Vertical specific styles
     #hotel-form {
         .form-fields {
-            padding-right: @date-range-field-width;
+            padding-right: @extra-fields-width;
         }
 
         .hotel-form-elements {
@@ -179,9 +179,25 @@
           max-width: @location-field-max-width;
         }
 
-        .date-range-field {
+        .fixed-width-fields {
+          width: @extra-fields-width;
           position: absolute;
           right: 0;
+        }
+
+        .date-range-field {
+          width: 50%;
+          display: inline-block;
+          float: left;
+        }
+
+        .extra-fields {
+          width: 50%;
+          display: inline-block;
+          float: left;
+          &:hover {
+              cursor: pointer;
+          }
         }
 
         .submit-button {
