@@ -4,39 +4,53 @@
 @dark: #333333;
 
 @button-width: 125px;
-@dates-width: 300px;
+@dates-width: 250px;
+@location-max-width: 700px;
+@form-max-width: calc(@location-max-width + @dates-width + @button-width);
 
 .stn-widget {
+    width: 100%;
     background-color: @bg-color;
 
-    .search-form {
-        display: block;
-        height: 200px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: @dark;
+
+    .row {
+        width: 100%;
         margin: 0 auto;
+        height: 56px;
+        text-align: center;
+        position: relative;
+        box-sizing: border-box;
+    }
 
-        font-family: Helvetica, Arial, sans-serif;
-        color: @dark;
+    .headline {
+        font-size: 26px;
+        text-align: center;
+        padding: 10px 0 20px;
+    }
+
+    .forms {
+
+
+    }
+
+    .form-container {
+        max-width: @form-max-width;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
         padding: 10px 20px;
+        font-size: 14px;
+    }
 
-        .row {
-            width: 100%;
-            margin: 0 auto;
-            height: 56px;
-            text-align: center;
-            position: relative;
-            box-sizing: border-box;
-        }
 
-        .header {
-            font-size: 26px;
-            text-align: center;
-            padding: 10px 0 20px;
-        }
 
-        #form {
-            font-size: 14px;
 
-            .main-fields {
+        #hotel-form {
+
+            .form-fields {
                 background-color: @inputs-bg-color;
                 border-radius: 5px;
                 float: left;
@@ -47,7 +61,7 @@
                 box-sizing: border-box;
             }
 
-            .input-field {
+            .form-field {
                 line-height: 56px;
                 height: 100%;
                 display: inline-block;
@@ -71,7 +85,7 @@
                 }
             }
 
-            .hotel-form {
+            .hotel-form-elements {
               padding-right: @button-width;
               position: relative;
             }
@@ -105,6 +119,7 @@
             .location {
                 float: left;
                 width: 100%;
+                max-width: 700px;
               }
 
             .hotel-search {
@@ -165,7 +180,7 @@
 
             }
 
-            .submit {
+            .submit-button {
                 display: block;
                 background-color: @orange;
                 width: @button-width;
@@ -221,5 +236,4 @@
                 width: 100%;
             }
         }
-    }
 }
