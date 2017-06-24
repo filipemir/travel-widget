@@ -18,11 +18,11 @@
 @border-radius: 5px;
 @button-width: 125px;
 @date-range-field-width: 200px;
-@extra-fields-width: 300px;
+@extra-fields-width: 310px;
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
-@two-cols-threshold: 750px;
+@two-cols-threshold: 1000px;
 
 .stn-widget {
     // Base styles:
@@ -85,7 +85,6 @@
         position: relative;
         box-sizing: border-box;
         height: @line-height;
-
         width: 100%;
 
         input {
@@ -137,7 +136,7 @@
           height: 1.25em;
 
           position: absolute;
-          top: 0; right: 0; bottom: 0; left: 0;
+          top: 0; right: 0; bottom: 0; left: 10px;
           margin: auto 0;
 
           color: @active-color;
@@ -145,7 +144,7 @@
       }
 
       input {
-          padding-left: 30px; // Leave space for the calendar icon
+          padding-left: 40px; // Leave space for the calendar icon
       }
     }
 
@@ -158,6 +157,7 @@
         line-height: @line-height;
         position: absolute;
         right: 0;
+        overflow: hidden;
 
         span {
             color: @button-text-color;
@@ -197,6 +197,9 @@
           width: @extra-fields-width;
           position: absolute;
           right: 0;
+          display: inline-block;
+          height: auto;
+          box-sizing: border-box;
         }
 
         .date-range-field {
@@ -209,6 +212,7 @@
           width: 50%;
           display: inline-block;
           float: left;
+          text-align: left;
 
           &:hover {
               cursor: pointer;
@@ -224,11 +228,12 @@
     @media (max-width: @two-cols-threshold) {
       #hotel-form {
         .form-fields {
-            padding-right: 0;
+          padding-right: 0;
         }
 
         .location-field {
           max-width: none;
+          border-radius: @border-radius @border-radius 0 0;
         }
 
         .hotel-form-elements {
@@ -236,14 +241,20 @@
         }
 
         .fixed-width-fields {
-          width: 100%;
+          width: 70%;
           position: relative;
+          padding-right: 0;
+          overflow: hidden;
+          float: left;
+          border-radius: 0 0 0 @border-radius;
         }
 
+        .submit-button {
+          bottom: 0;
+          border-radius: 0 0 @border-radius 0;
+          width: 30%;
+        }
       }
 
-      .submit-button {
-          position: relative;
-      }
     }
 }
