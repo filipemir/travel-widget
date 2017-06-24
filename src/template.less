@@ -22,6 +22,8 @@
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
+@two-cols-threshold: 750px;
+
 .stn-widget {
     // Base styles:
     background-color: @bg-color;
@@ -29,6 +31,10 @@
 
     color: @primary-text-color;
     font-family: @font-family;
+
+    form {
+      margin: 0;
+    }
 
     .row {
         height: @line-height;
@@ -56,10 +62,17 @@
         font-size: @form-font-size;
     }
 
+    .hotel-form-elements {
+        height: auto;
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
     .form-fields {
         border-radius: @border-radius;
         float: left;
-        height: 100%;
+        height: auto;
         position: relative;
         width: 100%;
         box-sizing: border-box;
@@ -68,11 +81,12 @@
     .form-field {
         background-color: @inputs-bg-color;
         line-height: @line-height;
-        height: 100%;
         display: inline-block;
         position: relative;
         box-sizing: border-box;
         height: @line-height;
+
+        width: 100%;
 
         input {
             background-color: @inputs-bg-color;
@@ -138,7 +152,7 @@
     .submit-button {
         background-color: @button-color;
         width: @button-width;
-        height: 100%;
+        height: @line-height;
         border-radius: @border-radius;
         text-align: center;
         line-height: @line-height;
@@ -195,6 +209,7 @@
           width: 50%;
           display: inline-block;
           float: left;
+
           &:hover {
               cursor: pointer;
           }
@@ -203,5 +218,32 @@
         .submit-button {
             border-radius: 0 @border-radius @border-radius 0;
         }
+    }
+
+
+    @media (max-width: @two-cols-threshold) {
+      #hotel-form {
+        .form-fields {
+            padding-right: 0;
+        }
+
+        .location-field {
+          max-width: none;
+        }
+
+        .hotel-form-elements {
+          padding-right: 0;
+        }
+
+        .fixed-width-fields {
+          width: 100%;
+          position: relative;
+        }
+
+      }
+
+      .submit-button {
+          position: relative;
+      }
     }
 }
