@@ -22,7 +22,8 @@
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
-@two-cols-threshold: 1000px;
+@two-cols-threshold: 1100px;
+@three-cols-threshold: 600px;
 
 .stn-widget {
     // Base styles:
@@ -224,7 +225,6 @@
         }
     }
 
-
     @media (max-width: @two-cols-threshold) {
       #hotel-form {
         .form-fields {
@@ -255,6 +255,29 @@
           width: 30%;
         }
       }
+    }
 
+    @media (max-width: @three-cols-threshold) {
+      #hotel-form {
+        .hotel-form-elements {
+          padding-right: 0;
+        }
+
+        .fixed-width-fields {
+          width: 100%;
+          position: relative;
+          padding-right: 0;
+          overflow: hidden;
+          float: left;
+          border-radius: 0;
+        }
+
+        .submit-button {
+          position: relative;
+          display: inline-block;
+          border-radius: 0 0 @border-radius @border-radius;
+          width: 100%;
+        }
+      }
     }
 }
