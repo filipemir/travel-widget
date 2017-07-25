@@ -7,6 +7,9 @@
 @active-color: #DF6D4B;
 @button-color: @active-color;
 @button-text-color: #fff;
+@tabs-bg-color: darken(@bg-color, 8%);
+@active-tab-bg-color: white;
+@tabs-color: @primary-text-color;
 
 // Fonts
 @font-family: Helvetica, Arial, sans-serif;
@@ -15,11 +18,11 @@
 
 // Vertical pickers
 @options-height: 30px;
-@vertical-pickers-width: 80px;
-@vertical-pickers-font-size: @form-font-size;
+@tabs-width: 80px;
+@tabs-font-size: @form-font-size;
 
 @border-width: 2px;
-@line-height: 56px;
+@line-height: 45px;
 @border-radius: 5px;
 @button-width: 125px;
 @date-range-field-width: 200px;
@@ -27,13 +30,14 @@
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
-@two-rows-threshold: 1100px;
+@two-rows-threshold: 700px;
 @three-rows-threshold: 600px;
 
 .stn-widget {
     // Base styles:
     background-color: @bg-color;
     width: 100%;
+    min-width: 380px;
 
     color: @primary-text-color;
     font-family: @font-family;
@@ -54,34 +58,50 @@
     .headline {
         font-size: @headline-font-size;
         text-align: center;
-        padding: 10px 0 20px;
         line-height: @line-height;
     }
 
     .options {
       height: @options-height;
+      z-index: 1;
 
-      .vertical-pickers {
+      .tabs {
         height: 100%;
-        font-size: 0; // Removes space between the divs representing the verticals
+        overflow: hidden;
       }
 
-      .vertical-picker {
-        border: solid 1px red;
+      .tab {
         display: inline-block;
-        width: @vertical-pickers-width;
+        width: @tabs-width;
         height: 100%;
         line-height: 100%;
-        font-size: @vertical-pickers-font-size;
+        font-size: @tabs-font-size;
         text-align: center;
         position: relative;
+        border-left: 0px;
+        background-color: @tabs-bg-color;
 
         span {
           -ms-transform: translate(-50%, -50%); // For IE9
           transform: translate(-50%, -50%);
           top: 50%;
           position: absolute;
+          color: @tabs-color;
         }
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken(@tabs-bg-color, 8%);
+        }
+
+        &.active {
+          background-color: @active-tab-bg-color;
+        }
+
+        -webkit-transition: background-color 300ms;
+        -moz-transition: background-color 300ms;
+        -o-transition: background-color 300ms;
+        transition: background-color 300ms;
       }
     }
 
@@ -92,7 +112,7 @@
         margin: 0 auto;
         width: 100%;
         height: auto;
-        padding: 10px 20px;
+        padding: 0 20px 10px 20px;
         font-size: @form-font-size;
     }
 
