@@ -13,6 +13,11 @@
 @headline-font-size: 26px;
 @form-font-size: 15px;
 
+// Vertical pickers
+@options-height: 30px;
+@vertical-pickers-width: 80px;
+@vertical-pickers-font-size: @form-font-size;
+
 @border-width: 2px;
 @line-height: 56px;
 @border-radius: 5px;
@@ -22,8 +27,8 @@
 @location-field-max-width: 600px;
 @form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
-@two-cols-threshold: 1100px;
-@three-cols-threshold: 600px;
+@two-rows-threshold: 1100px;
+@three-rows-threshold: 600px;
 
 .stn-widget {
     // Base styles:
@@ -52,6 +57,34 @@
         padding: 10px 0 20px;
         line-height: @line-height;
     }
+
+    .options {
+      height: @options-height;
+
+      .vertical-pickers {
+        height: 100%;
+        font-size: 0; // Removes space between the divs representing the verticals
+      }
+
+      .vertical-picker {
+        border: solid 1px red;
+        display: inline-block;
+        width: @vertical-pickers-width;
+        height: 100%;
+        line-height: 100%;
+        font-size: @vertical-pickers-font-size;
+        text-align: center;
+        position: relative;
+
+        span {
+          -ms-transform: translate(-50%, -50%); // For IE9
+          transform: translate(-50%, -50%);
+          top: 50%;
+          position: absolute;
+        }
+      }
+    }
+
 
     .form-container {
         max-width: @form-max-width;
@@ -225,7 +258,7 @@
         }
     }
 
-    @media (max-width: @two-cols-threshold) {
+    @media (max-width: @two-rows-threshold) {
       #hotel-form {
         .form-fields {
           padding-right: 0;
@@ -257,7 +290,7 @@
       }
     }
 
-    @media (max-width: @three-cols-threshold) {
+    @media (max-width: @three-rows-threshold) {
       #hotel-form {
         .hotel-form-elements {
           padding-right: 0;
