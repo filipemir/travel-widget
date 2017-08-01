@@ -4,7 +4,7 @@
 @inputs-bg-color: #fff;
 @inputs-text-color: 424242;
 @placeholder-text-color: #9a9ca8;
-@active-color: #DF6D4B;
+@active-color: rgb(255, 133, 23);
 @button-color: @active-color;
 @button-text-color: #fff;
 @tabs-bg-color: darken(@bg-color, 8%);
@@ -37,7 +37,6 @@
     // Base styles:
     background-color: @bg-color;
     width: 100%;
-    min-width: 380px;
 
     color: @primary-text-color;
     font-family: @font-family;
@@ -140,6 +139,7 @@
         box-sizing: border-box;
         height: @line-height;
         width: 100%;
+        border-bottom: @inputs-bg-color solid @border-width;
 
         input {
             background-color: @inputs-bg-color;
@@ -167,7 +167,7 @@
         }
 
         &.active {
-            border-bottom: @active-color solid @border-width;
+            border-bottom-color: @active-color;
         }
 
         &.round-left {
@@ -204,6 +204,9 @@
 
     .submit-button {
         background-color: @button-color;
+        background-image: -webkit-linear-gradient(@button-color, darken(@button-color, 8%));
+        background-image: -o-linear-gradient(@button-color, darken(@button-color, 8%));
+        background-image: linear-gradient(@button-color, darken(@button-color, 8%));
         width: @button-width;
         height: @line-height;
         border-radius: @border-radius;
@@ -221,19 +224,109 @@
 
         &:hover {
             cursor: pointer;
-            background-color: darken(@button-color, 6%);
+            background-color: darken(@button-color, 8%);
+            background-image: none;
         }
-
-        -webkit-transition: background-color 200ms;
-        -moz-transition: background-color 200ms;
-        -o-transition: background-color 200ms;
-        transition: background-color 200ms;
     }
 
-    .details {
+    .tooltip {
+      border: 1px solid #d3d3d3;
+      position: absolute;
+      background: @inputs-bg-color;
+      border: 1px solid #d3d3d3;
+      width: 170px;
+      border-radius: @border-radius;
+      text-align: left;
+      display: block;
+      top: 56px;
+      padding: 10px 20px;
+      left: 50%;
+      line-height: 28px;
+
+      -ms-transform: translate(-50%); // For IE9
+      transform: translate(-50%);
+
+      .count {
+        display: block;
+        padding: 5px 0;
+      }
+
+      .count-label {
+        text-align: left;
+        display: inline-block;
+      }
+
+      .count-changer {
+        display: inline-block;
+        font-weight: bold;
+        float: right;
+        font-size: 0px;
+        height: 28px;
+      }
+
+      .count-changer * {
+        display: inline-block;
+      }
+
+      .count-button {
+        color: @active-color;
+        width: 20px;
         border: 1px solid #d3d3d3;
-        height: 100px;
-        width: 100px;
+        text-align: center;
+        background-color: @bg-color;
+        background-image: linear-gradient(white, @bg-color);
+        font-size: @form-font-size;
+      }
+
+      .count-button-minus {
+        border-radius: @border-radius 0 0 @border-radius;
+      }
+
+      .count-button-plus {
+        border-radius: 0 @border-radius @border-radius 0;
+      }
+
+      .count-value {
+        width: 25px;
+        border: 1px solid #d3d3d3;
+        border-width: 1px 0 1px 0;
+        text-align: center;
+        font-size: @form-font-size;
+      }
+
+      &:after, &:before {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        bottom: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        border-bottom-color: @inputs-bg-color;
+        border-width: 7px;
+        margin-left: -7px;
+      }
+
+      &:before {
+        border-bottom-color: #d3d3d3;
+        border-width: 8px;
+        margin-left: -8px;
+      }
     }
 
     // Vertical specific styles
@@ -274,7 +367,7 @@
           float: left;
           text-align: left;
 
-          &:hover {
+          input:hover {
               cursor: pointer;
           }
         }

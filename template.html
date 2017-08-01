@@ -1,19 +1,20 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="template.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: darken(#E4E5EA, 10%)">
   <div class="partner-widget-container">
 
     <div class="stn-widget">
       <div class="row headline">Plan your trip.</div>
       <div class="row options">
         <div class="row tabs">
-          <div class="tab active"><span>Flights</span></div>
+          <div class="tab"><span>Flights</span></div>
           <div class="tab"><span>Cars</span></div>
-          <div class="tab"><span>Hotels</span></div>
+          <div class="tab active"><span>Hotels</span></div>
           <div class="tab"><span>Packages</span></div>
         </div>
       </div>
@@ -23,7 +24,7 @@
           <form id="hotel-form">
             <div class="hotel-form-elements">
               <div class="form-fields">
-                <div class="form-field location-field round-left active">
+                <div class="form-field location-field round-left">
                   <div class="typeahead__container">
                     <div class="typeahead__field">
                       <span class="typeahead__query">
@@ -34,7 +35,7 @@
                   </div>
                 </div>
                 <div class="fixed-width-fields">
-                  <div class="form-field date-range-field active">
+                  <div class="form-field date-range-field">
                     <div class="calendar-icon">
                       <svg viewBox="0 0 16 17.5" fill="currentColor">
                           <rect y="6.5" width="16" height="1"></rect>
@@ -45,7 +46,27 @@
                     </div>
                     <input type="text" class="form-control" id="dateRange" name="dateRange" placeholder="When?" />
                   </div>
-                  <div class="form-field extra-fields active">1 room, 2 guests</div>
+                  <div class="form-field extra-fields">
+                    <input class="form-field-text" value="2 guests, 1 room" readonly></input>
+                    <div class="tooltip" style="display: none;">
+                      <div class="count num-adults">
+                        <div class="count-label">Guests</div>
+                        <div class="count-changer">
+                          <div class="count-button count-button-minus">-</div>
+                            <div class="count-value">2</div>
+                          <div class="count-button count-button-plus">+</div>
+                        </div>
+                      </div>
+                      <div class="count num-rooms">
+                        <div class="count-label">Rooms</div>
+                        <div class="count-changer">
+                          <div class="count-button count-button-minus">-</div>
+                            <div class="count-value">1</div>
+                          <div class="count-button count-button-plus">+</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="submit-button"><span>Search</span></div>
@@ -54,14 +75,12 @@
         </div>
 
       </div>
-
-      <div class="details" style="position: absolute; top: 348px; left: 690.438px; z-index: 1001; display: block;">
-        Some stuff here
-      </div>
     </div>
 
 
   </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
 
 </html>
