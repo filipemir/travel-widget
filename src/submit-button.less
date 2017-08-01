@@ -1,0 +1,26 @@
+.submit-button {
+    background-color: @button-color;
+    background-image: -webkit-linear-gradient(@button-color, darken(@button-color, 8%));
+    background-image: -o-linear-gradient(@button-color, darken(@button-color, 8%));
+    background-image: linear-gradient(@button-color, darken(@button-color, 8%));
+    width: @button-width;
+    height: @line-height;
+    border-radius: @border-radius;
+    text-align: center;
+    line-height: @line-height;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+
+    span {
+        color: @button-text-color;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken(@button-color, 8%);
+        background-image: none;
+    }
+}

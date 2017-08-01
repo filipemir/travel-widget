@@ -1,0 +1,23 @@
+
+.date-range-field {
+  width: @date-range-field-width;
+
+  display: inline-block;
+  position: relative;
+
+  .calendar-icon {
+      width: 1.143em;
+      height: 1.25em;
+
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 10px;
+      margin: auto 0;
+
+      color: @active-color;
+      z-index: 1;
+  }
+
+  input {
+      padding-left: 40px; // Leave space for the calendar icon
+  }
+}
