@@ -238,13 +238,9 @@
       border-radius: @border-radius;
       text-align: left;
       display: block;
-      top: 56px;
       padding: 10px 20px;
-      left: 50%;
       line-height: 28px;
-
-      -ms-transform: translate(-50%); // For IE9
-      transform: translate(-50%);
+      z-index: 1001;
 
       .count {
         display: block;
@@ -276,6 +272,10 @@
         background-color: @bg-color;
         background-image: linear-gradient(white, @bg-color);
         font-size: @form-font-size;
+
+        &.inactive {
+          color: @tabs-bg-color;
+        }
       }
 
       .count-button-minus {
