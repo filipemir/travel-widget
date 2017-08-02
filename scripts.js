@@ -4,11 +4,28 @@ $('.form-field input, .form-field .form-field-text')
         $(this).parents('.form-field').toggleClass('active');
     });
 
+// ------------------- //
+
+function getActiveVertical() {
+    return $('.tab.active').attr('data');
+}
+
+function switchForms() {
+    const vertical = getActiveVertical();
+
+    $('.form-container').hide();
+    $(`#${vertical}-form`).show();
+}
+
+
 // Toggle vertical
 $('.tab').on('click', function() {
     $('.tab').removeClass('active');
     $(this).addClass('active');
+    switchForms();
 });
+
+// ------------------- //
 
 // Tooltip setup
 function placeTooltipBelowElement({ selector }) {
