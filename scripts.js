@@ -44,10 +44,10 @@ function placeTooltip() {
 
     const containerWidth = container.getBoundingClientRect().width;
 
-    tt.style.width = containerWidth < 600 ?
+    tt.style.width = containerWidth < 450 ?
         window.document.querySelectorAll('.fixed-width-fields')[0].getBoundingClientRect().width : 170;
 
-    placeTooltipBelowElement({ selector: containerWidth < 600 ? '.fixed-width-fields' : '.extra-fields' });
+    placeTooltipBelowElement({ selector: containerWidth < 450 ? '.fixed-width-fields' : '.extra-fields' });
 }
 
 $('.extra-fields input').on('focus', function() {
