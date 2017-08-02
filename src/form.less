@@ -8,15 +8,6 @@
     font-size: @form-font-size;
 }
 
-.form-fields {
-    border-radius: @border-radius;
-    float: left;
-    height: auto;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .form-field {
     background-color: @inputs-bg-color;
     line-height: @line-height;
@@ -64,3 +55,72 @@
         border-radius: 0 @border-radius @border-radius 0;
     }
 }
+
+.form-fields {
+    border-radius: @border-radius;
+    padding-right: @extra-fields-width;
+    float: left;
+    height: auto;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-elements {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-right: @button-width;
+    position: relative;
+}
+
+.location-field {
+  float: left;
+  max-width: @location-field-max-width;
+}
+
+.fixed-width-fields {
+  width: @extra-fields-width;
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.date-range-field {
+  width: 50%;
+
+  display: inline-block;
+  position: relative;
+  float: left;
+
+  .calendar-icon {
+      width: 1.143em;
+      height: 1.25em;
+
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 10px;
+      margin: auto 0;
+
+      color: @active-color;
+      z-index: 1;
+  }
+
+  input {
+      padding-left: 40px; // Leave space for the calendar icon
+  }
+}
+
+.extra-fields {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: left;
+
+  input:hover {
+      cursor: pointer;
+  }
+}
+
