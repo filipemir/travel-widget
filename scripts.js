@@ -28,14 +28,40 @@ function placeTooltipBelowElement({ selector }) {
     tt.style.top = top;
 }
 
-$('.extra-fields input').on('focus', function() {
-    $('.tooltip').show();
+let originalTtWidth;
 
-    placeTooltipBelowElement({ selector: '.extra-fields' });
+function placeTooltip() {
+    const container = window.document.querySelectorAll('.partner-widget-container')[0],
+        tt = window.document.querySelectorAll('.tooltip')[0];
+
+    if (!container || !tt) {
+        return;
+    }
+
+    if (!originalTtWidth) {
+        originalTtWidth = tt.getBoundingClientRect().width;
+    }
+
+    const containerWidth = container.getBoundingClientRect().width;
+
+    tt.style.width = containerWidth < 600 ?
+        window.document.querySelectorAll('.fixed-width-fields')[0].getBoundingClientRect().width : 170;
+
+    placeTooltipBelowElement({ selector: containerWidth < 600 ? '.fixed-width-fields' : '.extra-fields' });
+}
+
+$('.extra-fields input').on('focus', function() {
+    $('.tooltip').toggle();
+
+    placeTooltip();
+
+    // placeTooltipBelowElement({ selector: '.fixed-width-fields' });
 });
+
+$(window).on('resize', placeTooltip);
 
 // $('.tooltip').show();
 
-// $('body').on('focusout', function() {
-//     $('.tooltip').hide();
-// });
+$('.extra-fields input').on('focusout', function() {
+    // $('.tooltip').hide();
+});
