@@ -50,13 +50,14 @@
     .submit-button {
         border-radius: 0 @border-radius @border-radius 0;
     }
+}
 
-    @media (max-width: @two-rows-threshold) {
-      @import '2-rows.less';
-    }
 
-    @media (max-width: @three-rows-threshold) {
-      @import '3-rows.less';
-    }
+@media (max-width: @two-rows-threshold) {
+  @import '2-rows.less';
+}
+
+@media (max-width: @three-rows-threshold) {
+  @import '3-rows.less';
 }
 
