@@ -124,3 +124,42 @@
   }
 }
 
+@media (max-width: @two-rows-threshold) {
+  .form-fields {
+    padding-right: 0;
+  }
+
+  .location-field {
+    max-width: none;
+    border-radius: @border-radius @border-radius 0 0;
+  }
+
+  .form-elements {
+    padding-right: 0;
+  }
+
+  .fixed-width-fields {
+    width: 70%;
+    position: relative;
+    padding-right: 0;
+    overflow: hidden;
+    float: left;
+    border-radius: 0 0 0 @border-radius;
+  }
+}
+
+@media (max-width: @three-rows-threshold) {
+  .form-elements {
+    padding-right: 0;
+  }
+
+  .fixed-width-fields {
+    width: 100%;
+    position: relative;
+    padding-right: 0;
+    overflow: hidden;
+    float: left;
+    border-radius: 0;
+  }
+}
+
