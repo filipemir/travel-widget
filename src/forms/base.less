@@ -48,14 +48,6 @@
     &.active {
         border-bottom-color: @active-color;
     }
-
-    &.round-left {
-        border-radius: @border-radius 0 0 @border-radius;
-    }
-
-    &.round-right {
-        border-radius: 0 @border-radius @border-radius 0;
-    }
 }
 
 .form-fields {
@@ -80,6 +72,10 @@
 .location-field {
   float: left;
   max-width: @location-field-max-width;
+
+  &:nth-child(1) {
+    border-radius: @border-radius 0 0 @border-radius;
+  }
 }
 
 .fixed-width-fields {
@@ -146,7 +142,18 @@
 
   .location-field {
     max-width: none;
-    border-radius: @border-radius @border-radius 0 0;
+
+    &:nth-child(1) {
+      border-radius: @border-radius 0 0 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 @border-radius 0 0;
+    }
+  }
+
+  .date-range-field {
+    border-radius: 0 0 @border-radius 0;
   }
 
   .form-elements {
