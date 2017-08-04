@@ -1,3 +1,5 @@
+@import '../variables.less';
+
 .form-container {
     max-width: @form-max-width;
     display: block;
@@ -119,8 +121,21 @@
   float: left;
   text-align: left;
 
-  input:hover {
-      cursor: pointer;
+  input {
+    padding-right: 20px;
+  }
+
+  .down-arrow {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+  }
+
+  cursor: pointer;
+
+  input:hover, &:hover {
+    cursor: pointer;
   }
 }
 
