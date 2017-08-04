@@ -76,7 +76,7 @@
                 <input type="text" class="form-control" id="dateRange" name="dateRange" placeholder="When?" />
               </div>
               <div class="form-field extra-fields">
-                <input class="form-field-text" value="2 guests, 1 room" readonly></input>
+                <input class="form-field-text" value="2 passengers, coach" readonly></input>
               </div>
             </div>
           </div>
@@ -88,22 +88,60 @@
 
   <!-- TOOLTIP -->
   <div class="tooltip" style="display: none;">
-    <div class="panel">
-      <div class="count num-adults">
-        <div class="count-label">Guests</div>
+    <!-- HOTEL TOOLTIP -->
+    <div class="tooltip-content hotel-tooltip-content"  style="display: none;">
+      <div class="panel">
+        <div class="count num-adults">
+          <div class="count-label">Guests</div>
+            <div class="count-changer">
+            <div class="count-button count-button-minus">-</div>
+            <div class="count-value">2</div>
+            <div class="count-button count-button-plus">+</div>
+          </div>
+        </div>
+
+        <div class="count num-rooms">
+          <div class="count-label">Rooms</div>
           <div class="count-changer">
-          <div class="count-button count-button-minus">-</div>
-          <div class="count-value">2</div>
-          <div class="count-button count-button-plus">+</div>
+            <div class="count-button count-button-minus inactive">-</div>
+            <div class="count-value">1</div>
+            <div class="count-button count-button-plus">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AIR TOOLTIP -->
+    <div class="tooltip-content air-tooltip-content" >
+      <div class="panel">
+        <div class="count num-adults">
+          <div class="count-label">Passengers</div>
+          <div class="count-changer">
+            <div class="count-button count-button-minus">-</div>
+            <div class="count-value">2</div>
+            <div class="count-button count-button-plus">+</div>
+          </div>
         </div>
       </div>
 
-      <div class="count num-rooms">
-        <div class="count-label">Rooms</div>
-        <div class="count-changer">
-          <div class="count-button count-button-minus inactive">-</div>
-          <div class="count-value">1</div>
-          <div class="count-button count-button-plus">+</div>
+      <div class="panel">
+        <div class="flight-class">
+            <div class="panel-label">Class</div>
+            <div class="radios">
+              <div class="radio-field">
+                <input class="radio" type="radio" name="cabin" value="economyCoach" checked="checked" />
+                <label class="radio-label" for="economyCoach">Economy</label>
+              </div>
+              <div class="radio-field">
+                <input class="radio" type="radio" name="cabin" value="business" checked="checked">
+                <label class="radio-label" for="business">Business</label>
+              </div>
+              <div class="radio-field">
+                <input class="radio" type="radio" name="cabin" value="first" checked="checked">
+                <label class="radio-label" for="first">First</label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
