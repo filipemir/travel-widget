@@ -12,13 +12,13 @@
   <!-- HEADLINE -->
   <div class="row headline">Plan your trip.</div>
 
-  <!-- OPTIONS: For now this includes just the verticals but could include one way, etc -->
+  <!-- FORM OPTIONS -->
   <div class="row options">
     <div class="row tabs">
       <div class="tab active" data="air"><span>Flights</span></div>
       <div class="tab" data="car"><span>Cars</span></div>
       <div class="tab" data="hotel"><span>Hotels</span></div>
-      <!-- <div class="tab"><span>Packages</span></div> -->
+      <div class="tab"><span>Packages</span></div>
     </div>
   </div>
 
@@ -60,7 +60,7 @@
             <div class="form-field location-field round-left">
               <input id="originName" type="search" placeholder="Where from?" value="Boston, MA">
             </div>
-            <div class="form-field location-field round-left">
+            <div class="form-field location-field">
               <input id="destinationName" type="search" placeholder="Where to?" value="New York, NY">
             </div>
             <div class="fixed-width-fields">
@@ -125,19 +125,36 @@
       </div>
 
       <div class="panel">
-        <div class="flight-class">
-            <div class="panel-label">Class</div>
+        <div class="flight-type">
+            <div class="panel-label">Flight type:</div>
             <div class="radios">
               <div class="radio-field">
-                <input class="radio" type="radio" name="cabin" value="economyCoach" checked="checked" />
+                <input class="radio" type="radio" name="flightType" value="roundtrip" checked />
+                <label class="radio-label" for="roudntrip">Roundtrip</label>
+              </div>
+              <div class="radio-field">
+                <input class="radio" type="radio" name="flightType" value="oneway">
+                <label class="radio-label" for="oneway">One-way</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="flight-class">
+            <div class="panel-label">Class:</div>
+            <div class="radios">
+              <div class="radio-field">
+                <input class="radio" type="radio" name="flightClass" value="economyCoach" checked />
                 <label class="radio-label" for="economyCoach">Economy</label>
               </div>
               <div class="radio-field">
-                <input class="radio" type="radio" name="cabin" value="business" checked="checked">
+                <input class="radio" type="radio" name="flightClass" value="business">
                 <label class="radio-label" for="business">Business</label>
               </div>
               <div class="radio-field">
-                <input class="radio" type="radio" name="cabin" value="first" checked="checked">
+                <input class="radio" type="radio" name="flightClass" value="first">
                 <label class="radio-label" for="first">First</label>
               </div>
             </div>
