@@ -50,7 +50,7 @@ let originalTtWidth;
 function placeTooltip() {
     const container = window.document.querySelectorAll('.partner-widget-container')[0],
         tt = window.document.querySelectorAll('.tooltip')[0],
-        vertical = getActiveVertical()
+        vertical = getActiveVertical();
 
     if (!container || !tt) {
         return;
@@ -67,6 +67,13 @@ function placeTooltip() {
 
     placeTooltipBelowElement({ selector: containerWidth < 450 ?
         `#${vertical}-form .secondary-fields` : `#${vertical}-form .tooltip-summary` });
+
+    showTooltipcontent(vertical);
+}
+
+function showTooltipcontent(vertical) {
+    $('.tooltip-content').hide();
+    $(`.${vertical}-tooltip-content`).show();
 }
 
 $('.tooltip-summary input').on('focus', function() {
@@ -82,5 +89,5 @@ $(window).on('resize', placeTooltip);
 // $('.tooltip').show();
 
 $('.tooltip-summary input').on('focusout', function() {
-    // $('.tooltip').hide();
+    $('.tooltip').hide();
 });
