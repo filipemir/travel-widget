@@ -39,7 +39,7 @@ function placeTooltipBelowElement({ selector }) {
     const ttBounds = tt.getBoundingClientRect(),
         elementBounds = element.getBoundingClientRect(),
         left = elementBounds.left + elementBounds.width/2 - ttBounds.width/2,
-        top = elementBounds.top + elementBounds.height + 7;  // 7 is the size of the arrow
+        top = elementBounds.top + elementBounds.height + 8;  // 7 is the size of the arrow
 
     tt.style.left = left;
     tt.style.top = top;
@@ -63,24 +63,24 @@ function placeTooltip() {
     const containerWidth = container.getBoundingClientRect().width;
 
     tt.style.width = containerWidth < 450 ?
-        window.document.querySelectorAll(`#${vertical}-form .fixed-width-fields`)[0].getBoundingClientRect().width : 180;
+        window.document.querySelectorAll(`#${vertical}-form .secondary-fields`)[0].getBoundingClientRect().width : 200;
 
     placeTooltipBelowElement({ selector: containerWidth < 450 ?
-        `#${vertical}-form .fixed-width-fields` : `#${vertical}-form .extra-fields` });
+        `#${vertical}-form .secondary-fields` : `#${vertical}-form .tooltip-summary` });
 }
 
-$('.extra-fields input').on('focus', function() {
+$('.tooltip-summary input').on('focus', function() {
     $('.tooltip').toggle();
 
     placeTooltip();
 
-    // placeTooltipBelowElement({ selector: '.fixed-width-fields' });
+    // placeTooltipBelowElement({ selector: '.secondary-fields' });
 });
 
 $(window).on('resize', placeTooltip);
 
 // $('.tooltip').show();
 
-$('.extra-fields input').on('focusout', function() {
+$('.tooltip-summary input').on('focusout', function() {
     // $('.tooltip').hide();
 });

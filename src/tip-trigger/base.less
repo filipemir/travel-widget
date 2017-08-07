@@ -1,0 +1,134 @@
+.tooltip {
+  position: absolute;
+  background: @color-bg-tooltip;
+  border: @border-width-tooltip solid @border-color-tooltip;
+  width: @width-tooltip;
+  border-radius: @border-radius;
+  text-align: left;
+  display: block;
+  padding: @padding-tooltip;
+  line-height: @line-height-tooltip;
+  z-index: 1;
+  font-size: @font-size-form;
+
+  .panel {
+    height: auto;
+    padding: @padding-tooltip-panel;
+    border-top: @border-width-tooltip solid @border-color-tooltip;
+
+    &:nth-child(1) {
+      border: 0;
+    }
+
+    .panel-label {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  .count {
+    display: block;
+    padding: @padding-counters;
+    height: @height-counters;
+  }
+
+  .count-label {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .count-changer {
+    display: inline-block;
+    font-weight: bold;
+    float: right;
+    font-size: 0;
+    height: @height-counters;
+  }
+
+  .count-changer * {
+    display: inline-block;
+    height: @height-counters;
+  }
+
+  .count-button {
+    color: @color-active-field;
+    width: @width-counter-buttons;
+    border: @border-width-tooltip solid @border-color-tooltip;
+    text-align: center;
+    background-color: @color-bg-widget;
+    background-image: linear-gradient(white, @color-bg-widget);
+    font-size: @font-size-form;
+    height: @height-counters;
+
+    &.inactive {
+      color: @color-bg-tabs;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .count-button-minus {
+    border-radius: @border-radius 0 0 @border-radius;
+  }
+
+  .count-button-plus {
+    border-radius: 0 @border-radius @border-radius 0;
+  }
+
+  .count-value {
+    width: @height-counters;
+    border: @border-width-tooltip solid @border-color-tooltip;
+    border-width: @border-width-tooltip 0 @border-width-tooltip 0;
+    text-align: center;
+    font-size: @font-size-form;
+  }
+
+  .radio {
+    margin: 0;
+
+    .radio-field {
+      display: block;
+    }
+
+    .radio-label {
+        display: inline-block;
+    }
+  }
+
+  // Styles for tooltip arrow:
+  &:after, &:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-bottom-color: @color-bg-tooltip;
+    border-width: @tooltip-arrow-size - 1;
+    margin-left: -(@tooltip-arrow-size - 1);
+  }
+
+  &:before {
+    border-bottom-color: @border-color-tooltip;
+    border-width: @tooltip-arrow-size;
+    margin-left: -@tooltip-arrow-size;
+  }
+}

@@ -1,13 +1,11 @@
-@import '../variables.less';
-
 .form-container {
-    max-width: @max-width-form;
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    padding: 0 20px 10px 20px;
-    font-size: @font-size-form;
+  max-width: @max-width-form;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: @padding-form-container;
+  font-size: @font-size-form;
 }
 
 .form-field {
@@ -32,9 +30,8 @@
 
         width: 100%;
         height: @line-height-base;
-        padding: 0;
         outline: none;
-        border-width: 0px;
+        border-width: 0;
         font-size: @font-size-form;
         border-radius: @border-radius;
 
@@ -42,7 +39,7 @@
         position: absolute;
         top: 0; left: 0; bottom: 0; right: 0;
         margin: auto 0;
-        padding: 0 10px;
+        padding: @padding-input-fields;
     }
 
     &.active {
@@ -52,7 +49,7 @@
 
 .form-fields {
     border-radius: @border-radius;
-    padding-right: @width-extra-fields;
+    padding-right: @width-tooltip-summmary;
     float: left;
     height: auto;
     position: relative;
@@ -78,8 +75,8 @@
   }
 }
 
-.fixed-width-fields {
-  width: @width-extra-fields;
+.secondary-fields {
+  width: @width-tooltip-summmary;
   position: absolute;
   right: 0;
   display: inline-block;
@@ -89,7 +86,6 @@
 
 .date-range-field {
   width: 50%;
-
   display: inline-block;
   position: relative;
   float: left;
@@ -107,77 +103,28 @@
   }
 
   input {
-      padding-left: 40px; // Leave space for the calendar icon
+      padding-left: 40px; // Leaving space for the calendar icon
   }
 }
 
-.extra-fields {
+.tooltip-summary {
   width: 50%;
   display: inline-block;
   float: left;
   text-align: left;
+  cursor: pointer;
 
   input {
-    padding-right: 20px;
+    padding-right: 20px; // Leaving space for down arrow
   }
 
   .down-arrow {
-    display: inline-block;
-    position: absolute;
     right: 5px;
     top: 50%;
   }
 
-  cursor: pointer;
-
   input:hover, &:hover {
     cursor: pointer;
-  }
-}
-
-@media (max-width: @threshold-width-medium) {
-  .form-fields {
-    padding-right: 0;
-  }
-
-  .location-field {
-    max-width: none;
-
-    &:nth-child(1) {
-      border-radius: @border-radius 0 0 0;
-    }
-
-    &:nth-child(2) {
-      border-radius: 0 @border-radius 0 0;
-    }
-  }
-
-  .form-elements {
-    padding-right: 0;
-  }
-
-  .fixed-width-fields {
-    width: 70%;
-    position: relative;
-    padding-right: 0;
-    overflow: hidden;
-    float: left;
-    border-radius: 0 0 0 @border-radius;
-  }
-}
-
-@media (max-width: @threshold-width-small) {
-  .form-elements {
-    padding-right: 0;
-  }
-
-  .fixed-width-fields {
-    width: 100%;
-    position: relative;
-    padding-right: 0;
-    overflow: hidden;
-    float: left;
-    border-radius: 0;
   }
 }
 
