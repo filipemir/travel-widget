@@ -1,11 +1,11 @@
 // Shared variables
 
 // Colors:
-@color-active-field: #FF8517;
-@color-bg-inputs: #fff;
-@color-bg-tabs-active: #fff;
-@color-bg-tabs: darken(@color-bg-widget, 8%);
 @color-bg-widget: #E4E5EA;
+@color-bg-inputs: #fff;
+@color-bg-tabs: darken(@color-bg-widget, 8%);
+@color-bg-tabs-active: @color-bg-inputs;
+@color-active-field: #FF8517;
 @color-button: @color-active-field;
 @color-text-button: #fff;
 @color-text-inputs-placeholder: #9a9ca8;
@@ -21,18 +21,19 @@
 
 // Vertical pickers
 @height-form-options: 30px;
+
 @width-tabs: 80px;
+@width-button: 125px;
+@width-bottom-border-active-field: 2px;
+@width-date-range-field: 200px;
+@width-extra-fields: 400px;
+@max-width-location-field: 700px;
+@max-width-form: calc(@max-width-location-field + @width-date-range-field + @width-button);
+@min-width-widget: 315px;
 
-@border-width: 2px;
-@line-height: 45px;
+
+@line-height-base: 45px;
 @border-radius: 5px;
-@button-width: 125px;
-@date-range-field-width: 200px;
-@extra-fields-width: 400px;
-@location-field-max-width: 700px;
-@form-max-width: calc(@location-field-max-width + @date-range-field-width + @button-width);
 
-@two-rows-threshold: 860px;
-@three-rows-threshold: 450px;
-
-@min-width: 315px;
+@threshold-width-medium: 860px;
+@threshold-width-small: 450px;

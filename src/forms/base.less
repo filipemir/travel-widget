@@ -1,7 +1,7 @@
 @import '../variables.less';
 
 .form-container {
-    max-width: @form-max-width;
+    max-width: @max-width-form;
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -12,13 +12,13 @@
 
 .form-field {
     background-color: @color-bg-inputs;
-    line-height: @line-height;
+    line-height: @line-height-base;
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    height: @line-height;
+    height: @line-height-base;
     width: 100%;
-    border-bottom: @color-bg-inputs solid @border-width;
+    border-bottom: @color-bg-inputs solid @width-bottom-border-active-field;
 
     input {
         background-color: @color-bg-inputs;
@@ -31,7 +31,7 @@
         &::-ms-input-placeholder  { color: @color-text-inputs-placeholder; }
 
         width: 100%;
-        height: @line-height;
+        height: @line-height-base;
         padding: 0;
         outline: none;
         border-width: 0px;
@@ -52,7 +52,7 @@
 
 .form-fields {
     border-radius: @border-radius;
-    padding-right: @extra-fields-width;
+    padding-right: @width-extra-fields;
     float: left;
     height: auto;
     position: relative;
@@ -65,13 +65,13 @@
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
-    padding-right: @button-width;
+    padding-right: @width-button;
     position: relative;
 }
 
 .location-field {
   float: left;
-  max-width: @location-field-max-width;
+  max-width: @max-width-location-field;
 
   &:nth-child(1) {
     border-radius: @border-radius 0 0 @border-radius;
@@ -79,7 +79,7 @@
 }
 
 .fixed-width-fields {
-  width: @extra-fields-width;
+  width: @width-extra-fields;
   position: absolute;
   right: 0;
   display: inline-block;
@@ -135,7 +135,7 @@
   }
 }
 
-@media (max-width: @two-rows-threshold) {
+@media (max-width: @threshold-width-medium) {
   .form-fields {
     padding-right: 0;
   }
@@ -152,10 +152,6 @@
     }
   }
 
-  .date-range-field {
-    border-radius: 0 0 @border-radius 0;
-  }
-
   .form-elements {
     padding-right: 0;
   }
@@ -170,7 +166,7 @@
   }
 }
 
-@media (max-width: @three-rows-threshold) {
+@media (max-width: @threshold-width-small) {
   .form-elements {
     padding-right: 0;
   }
