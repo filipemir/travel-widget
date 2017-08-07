@@ -7,35 +7,35 @@
     width: 100%;
     height: auto;
     padding: 0 20px 10px 20px;
-    font-size: @form-font-size;
+    font-size: @font-size-form;
 }
 
 .form-field {
-    background-color: @inputs-bg-color;
+    background-color: @color-bg-inputs;
     line-height: @line-height;
     display: inline-block;
     position: relative;
     box-sizing: border-box;
     height: @line-height;
     width: 100%;
-    border-bottom: @inputs-bg-color solid @border-width;
+    border-bottom: @color-bg-inputs solid @border-width;
 
     input {
-        background-color: @inputs-bg-color;
-        color: @inputs-text-color;
+        background-color: @color-bg-inputs;
+        color: @color-text-inputs;
 
-        &::-webkit-input-placeholder { color: @placeholder-text-color; }
-        &:-moz-placeholder { color: @placeholder-text-color; opacity:  1; }
-        &::-moz-placeholder  { color: @placeholder-text-color; opacity:  1; }
-        &:-ms-input-placeholder { color: @placeholder-text-color; }
-        &::-ms-input-placeholder  { color: @placeholder-text-color; }
+        &::-webkit-input-placeholder { color: @color-text-inputs-placeholder; }
+        &:-moz-placeholder { color: @color-text-inputs-placeholder; opacity:  1; }
+        &::-moz-placeholder  { color: @color-text-inputs-placeholder; opacity:  1; }
+        &:-ms-input-placeholder { color: @color-text-inputs-placeholder; }
+        &::-ms-input-placeholder  { color: @color-text-inputs-placeholder; }
 
         width: 100%;
         height: @line-height;
         padding: 0;
         outline: none;
         border-width: 0px;
-        font-size: @form-font-size;
+        font-size: @font-size-form;
         border-radius: @border-radius;
 
         height: auto;
@@ -46,7 +46,7 @@
     }
 
     &.active {
-        border-bottom-color: @active-color;
+        border-bottom-color: @color-active-field;
     }
 }
 
@@ -102,7 +102,7 @@
       top: 0; right: 0; bottom: 0; left: 10px;
       margin: auto 0;
 
-      color: @active-color;
+      color: @color-active-field;
       z-index: 1;
   }
 

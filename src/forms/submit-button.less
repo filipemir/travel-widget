@@ -1,8 +1,8 @@
 .submit-button {
-    background-color: @button-color;
-    background-image: -webkit-linear-gradient(@button-color, darken(@button-color, 8%));
-    background-image: -o-linear-gradient(@button-color, darken(@button-color, 8%));
-    background-image: linear-gradient(@button-color, darken(@button-color, 8%));
+    background-color: @color-button;
+    background-image: -webkit-linear-gradient(@color-button, darken(@color-button, 8%));
+    background-image: -o-linear-gradient(@color-button, darken(@color-button, 8%));
+    background-image: linear-gradient(@color-button, darken(@color-button, 8%));
     width: @button-width;
     height: @line-height;
     border-radius: 0 @border-radius @border-radius 0;
@@ -13,14 +13,14 @@
     overflow: hidden;
 
     span {
-        color: @button-text-color;
+        color: @color-text-button;
         display: inline-block;
         vertical-align: middle;
     }
 
     &:hover {
         cursor: pointer;
-        background-color: darken(@button-color, 8%);
+        background-color: darken(@color-button, 8%);
         background-image: none;
     }
 }

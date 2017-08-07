@@ -1,7 +1,7 @@
 .tooltip {
   border: 1px solid #d3d3d3;
   position: absolute;
-  background: @inputs-bg-color;
+  background: @color-bg-inputs;
   border: 1px solid #d3d3d3;
   width: 180px;
   border-radius: @border-radius;
@@ -10,7 +10,7 @@
   padding: 0 20px;
   line-height: 28px;
   z-index: 1001;
-  font-size: @form-font-size;
+  font-size: @font-size-form;
 
   .panel {
     height: auto;
@@ -53,17 +53,17 @@
   }
 
   .count-button {
-    color: @active-color;
+    color: @color-active-field;
     width: 20px;
     border: 1px solid #d3d3d3;
     text-align: center;
-    background-color: @bg-color;
-    background-image: linear-gradient(white, @bg-color);
-    font-size: @form-font-size;
+    background-color: @color-bg-widget;
+    background-image: linear-gradient(white, @color-bg-widget);
+    font-size: @font-size-form;
     height: 25px;
 
     &.inactive {
-      color: @tabs-bg-color;
+      color: @color-bg-tabs;
     }
 
     &:hover {
@@ -84,7 +84,7 @@
     border: 1px solid #d3d3d3;
     border-width: 1px 0 1px 0;
     text-align: center;
-    font-size: @form-font-size;
+    font-size: @font-size-form;
   }
 
   .radio {
@@ -123,7 +123,7 @@
   }
 
   &:after {
-    border-bottom-color: @inputs-bg-color;
+    border-bottom-color: @color-bg-inputs;
     border-width: 7px;
     margin-left: -7px;
   }

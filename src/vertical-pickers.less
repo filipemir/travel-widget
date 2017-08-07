@@ -1,5 +1,5 @@
-.options {
-  height: @options-height;
+.form-options {
+  height: @height-form-options;
   z-index: 1;
 
   .tabs {
@@ -9,30 +9,30 @@
 
   .tab {
     display: inline-block;
-    width: @tabs-width;
+    width: @width-tabs;
     height: 100%;
     line-height: 100%;
-    font-size: @tabs-font-size;
+    font-size: @font-size-tabs;
     text-align: center;
     position: relative;
     border-left: 0px;
-    background-color: @tabs-bg-color;
+    background-color: @color-bg-tabs;
 
     span {
       -ms-transform: translate(-50%, -50%); // For IE9
       transform: translate(-50%, -50%);
       top: 50%;
       position: absolute;
-      color: @tabs-color;
+      color: @color-text-tabs;
     }
 
     &:hover {
         cursor: pointer;
-        background-color: darken(@tabs-bg-color, 8%);
+        background-color: darken(@color-bg-tabs, 8%);
     }
 
     &.active {
-      background-color: @active-tab-bg-color;
+      background-color: @color-bg-tabs-active;
     }
 
     -webkit-transition: background-color 200ms;
