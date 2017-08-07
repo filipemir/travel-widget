@@ -1,58 +1,49 @@
-// Shared variables
-
-// Colors:
-@color-bg-widget: #E4E5EA;
-@color-bg-inputs: #fff;
-@color-bg-tabs: darken(@color-bg-widget, 8%);
-@color-bg-tabs-active: @color-bg-inputs;
-@color-bg-tooltip: @color-bg-inputs;
-@color-active-field: #FF8517;
-@color-button: @color-active-field;
-@color-text-button: #fff;
-@color-text-inputs-placeholder: #9a9ca8;
-@color-text-inputs: @color-text-primary;
-@color-text-primary: #424242;
-@color-text-tabs: @color-text-primary;
-
-// Fonts
+// Shared
 @font-family: Helvetica, Arial, sans-serif;
 @font-size-headline: 26px;
-@font-size-form: 15px;
-@font-size-tabs: @font-size-form;
-
-// Vertical pickers
-@height-form-options: 30px;
-
-@width-tabs: 80px;
-@width-button: 125px;
-@width-bottom-border-active-field: 2px;
-@width-tooltip: 200px;
-@width-tooltip-summmary: 400px;
-@max-width-location-field: 700px;
-@max-width-form: calc(@max-width-location-field + @width-tooltip-summmary + @width-button);
-@min-width-widget: 315px;
-
-
-@line-height-base: 45px;
+@font-size-base: 15px;
+@color-bg-widget: #E4E5EA;
+@color-text-primary: #424242;
 @border-radius: 5px;
-
+@line-height-base: 45px;
+@min-width-widget: 315px;
+@max-width-form: calc(@max-width-location-field + @width-tooltip-summmary + @width-submit-button);
 @threshold-width-medium: 860px;
 @threshold-width-small: 450px;
 
+// Tabs (vertical pickers)
+@font-size-tabs: @font-size-form;
+@height-form-options: 30px;
+@width-tabs: 80px;
+@color-text-tabs: @color-text-primary;
+@color-bg-tabs: darken(@color-bg-widget, 8%);
+@color-bg-tabs-active: @color-bg-inputs;
 
+// Form:
+@font-size-form: @font-size-base;
+@color-bg-inputs: #fff;
+@color-active-field: #FF8517;
+@color-submit-button: @color-active-field;
+@color-text-button: #fff;
+@color-text-inputs-placeholder: #9a9ca8;
+@color-text-inputs: @color-text-primary;
+@width-submit-button: 125px;
+@width-bottom-border-active-field: 2px;
+@max-width-location-field: 700px;
+@padding-form-container: 0 20px 10px 20px;
+@padding-input-fields: 0 10px;
+
+// Tooltip:
+@color-bg-tooltip: @color-bg-inputs;
+@font-size-tooltip: @font-size-base;
+@width-tooltip: 200px;
+@width-tooltip-summmary: 400px;
 @padding-tooltip: 0 20px;
 @line-height-tooltip: 28px;
 @border-width-tooltip: 1px;
 @border-color-tooltip: #d3d3d3;
 @padding-tooltip-panel: 10px 0;
-
 @height-counters: 25px;
 @width-counter-buttons: 20px;
 @padding-counters: 5px 0;
-
 @tooltip-arrow-size: 8px;
-
-
-
-@padding-form-container: 0 20px 10px 20px;
-@padding-input-fields: 0 10px;
