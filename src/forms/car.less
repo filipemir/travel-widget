@@ -1,24 +1,30 @@
 #car-form {
-    .location-field {
-        width: 50%;
-    }
+  .location-field {
+      width: 50%;
+  }
 
-    .date-field, .time-field {
-      width: 20%;
-      display: inline-block;
-      position: relative;
-      float: left;
-    }
+  .date-field, .time-field {
+    width: 20%;
+    display: inline-block;
+    position: relative;
+    float: left;
+  }
 
-    .date-field {
-      width: 30%;
-    }
+  .date-field {
+    width: 30%;
+  }
 
-    .form-fields {
-        padding-right: 320px;
-    }
+  .form-fields {
+      padding-right: 320px;
+  }
 
+  .secondary-fields {
+      width: 320px;
+  }
+
+  @media (max-width: @threshold-width-medium) {
     .secondary-fields {
-        width: 320px;
+      width: 70%;
     }
+  }
 }
